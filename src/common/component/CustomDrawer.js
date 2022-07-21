@@ -8,7 +8,7 @@ import {
   FlatList,
   ScrollView,
 } from "react-native";
-import {Scale,verticalScale } from "../constants"
+import {Scale,verticalScale,IMAGE } from "../constants"
 // import * as IMAGECONST from "../theme/ImageConstants";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
@@ -17,124 +17,58 @@ const drawerData = [
     id: 1,
     // image: IMAGECONST.HOME_IN_ACT,
     boxText: "Home",
-    // navigation: "HomeScreen",
+    navigation: "HomeScreen",
   },
   {
     id: 2,
     // image: IMAGECONST.ORDERICON,
-    boxText: "Your Orders",
+    boxText: "Wifi Credentials",
     // navigation: "OrderDetails",
   },
   {
     id: 3,
     // image: IMAGECONST.MYCATICON,
-    boxText: "My Catalog",
+    boxText: "Rooms",
     // navigation: "StoreManagementNew",
   },
   {
     id: 4,
     // image: IMAGECONST.TERMCONDICON,
-    boxText: "Terms & Conditions",
+    boxText: "Schedules",
     // navigation: "TermsCondistion",
   },
   {
     id: 5,
     // image: IMAGECONST.ASKICON,
-    boxText: `FAQ's`,
+    boxText: `Scenes`,
     // navigation: "QusAnsScreen",
   },
   {
     id: 6,
     // image: IMAGECONST.CONTACTSIDEMENU,
-    boxText: "Contact Us",
-    navigation: "ContactScreen",
+    boxText: "Favorites",
+    // navigation: "ContactScreen",
   },
   {
     id: 7,
     // image: IMAGECONST.MYTRANSSIDE,
-    boxText: "My Transactions",
+    boxText: "Settings",
     // navigation: "TransactionScreen",
   },
   {
     id: 8,
     // image: IMAGECONST.MYCHATICON,
-    boxText: "My Chats",
-    // navigation: "UserChat",
-  },
-];
-const drawerDataBuyer = [
-  {
-    id: 0,
-    // image: IMAGECONST.MYCHATICON,
-    boxText: "Home",
-    // navigation: "TabNavigator",
-  },
-  {
-    id: 1,
-    // image: IMAGECONST.MYCHATICON,
-    boxText: "My Chats",
-    // navigation: "UserChat",
-  },
-  {
-    id: 2,
-    // image: IMAGECONST.ORDERICON,
-    boxText: "Your Orders",
-    // navigation: "OrderDetails",
-  },
-  {
-    id: 3,
-    // image: IMAGECONST.SIDEMENUADDRESS,
-    boxText: "My Address",
-    // navigation: "MyAddress",
-  },
-  {
-    id: 4,
-    // image: IMAGECONST.TERMCONDICON,
-    boxText: "My Payment Methods",
-    // navigation: "PaymentMethods",
-  },
-  {
-    id: 5,
-    // image: IMAGECONST.ASKICON,
-    boxText: `FAQ's`,
-    // navigation: "QusAnsScreen",
-  },
-  {
-    id: 6,
-    // image: IMAGECONST.CONTACTSIDEMENU,
     boxText: "Contact Us",
-    // navigation: "ContactScreen",
-  },
-  {
-    id: 7,
-    // image: IMAGECONST.TANDC,
-    boxText: "Terms & Conditions",
-    // navigation: "TermsCondistion",
+    // navigation: "UserChat",
   },
 ];
 
 export default class CustomDrawer extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      userRole: "",
-    };
-  }
-  async componentDidMount() {
-    let userToken = JSON.parse(await AsyncStorage.getItem("userToken"));
-    this.setState({ userRole: userToken?.role });
   }
 
-  gotTOProfile() {
-    // this.props.navigation.navigate("BuyerProfile");
-    // this.props.navigation.navigate("UserProfile");
-    if (this.state.userRole === "Seller") {
-      this.props.navigation.navigate("UserProfile");
-    } else {
-      this.props.navigation.navigate("BuyerProfile");
-    }
-  }
+
   renderTopConatiner = () => {
     return (
       <View style={styles.menuWrapper}>
@@ -142,24 +76,24 @@ export default class CustomDrawer extends React.Component {
           <TouchableOpacity onPress={() => this.props.navigation.closeDrawer()}>
             {/* <Image
               style={styles.closeDrawerIcon}
-              source={IMAGECONST.CANCELDRAWER}
+              source={IMAGE.profile}
             /> */}
           </TouchableOpacity>
           {/* <Image style={styles.menuIcon} source={IMAGECONST.USER_ICON} /> */}
           <Text style={styles.userTitle}>Sam rechard</Text>
           <View style={{ flexDirection: "row" }}>
-            {/* <Image
+            <Image
               style={styles.locationIcon}
-              source={IMAGECONST.LOCATIONICON}
-            /> */}
+              source={IMAGE.profile}
+            />
             <Text style={styles.userLocationText}>Stockholm, Sweden</Text>
           </View>
-          <TouchableOpacity
+          {/* <TouchableOpacity
             onPress={() => this.gotTOProfile()}
             style={styles.buttonContainer}
           >
             <Text style={styles.buttonText}>My Account</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       </View>
     );
@@ -184,11 +118,11 @@ export default class CustomDrawer extends React.Component {
     return (
       <View style={styles.renderCategoriesListContainer}>
         <FlatList
-          data={this.state.userRole === "Seller" ? drawerData : drawerDataBuyer}
+          data={drawerData}
           renderItem={({ item }) => this.renderDrawerCell(item)}
           // horizontal={true}
           scrollEnabled={false}
-          numColumns={2}
+          numColumns={1}
           showsHorizontalScrollIndicator={false}
         />
       </View>
@@ -272,21 +206,15 @@ const styles = StyleSheet.create({
   },
 
   renderCategoriesListContainer: {
-    marginTop: verticalScale(20),
-    marginLeft: Scale(20),
+    marginLeft: Scale(10),
   },
 
   renderDrawerBox: {
     width: Scale(130),
     margin: Scale(5),
     paddingBottom: Scale(10),
-    backgroundColor: "#fff",
-    borderRadius: Scale(16),
-    elevation: 10,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.2,
-    shadowRadius: 10,
+    borderBottomWidth:1,
+    borderBottomColor:"#E5DFED",
     borderStyle: "solid",
   },
 
@@ -299,18 +227,17 @@ const styles = StyleSheet.create({
   },
 
   drawerBoxText: {
-    color: "#888888",
-    textAlign: "left",
-    textAlignVertical: "top",
-    fontSize: Scale(13),
+    color: "#1D232E",
     fontWeight: "500",
-    marginTop: verticalScale(25),
+    fontSize: Scale(16),
+    fontWeight: "500",
+    marginTop: verticalScale(15),
     marginLeft: Scale(20),
   },
 
   locationIcon: {
-    width: Scale(12),
-    height: Scale(12),
+    width: Scale(60),
+    height: Scale(60),
     marginTop: verticalScale(15),
     resizeMode: "contain",
   },

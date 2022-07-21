@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import {CustomHeader} from "../../common/component"
+const Scheduler = (props) => {
+const {navigation} = props;
 
-const Scheduler = () => {
   return (
-    <View>
-      <Text>Scheduler</Text>
-    </View>
+<CustomHeader navigation={navigation}/>
   )
 }
 

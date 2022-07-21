@@ -6,6 +6,7 @@ import HomeScreen from '../screens/HomeScreen';
 import Scheduler from '../screens/Scheduler';
 import Scene from '../screens/Scene';
 import Favorites from "../screens/Favorites"
+import Setting from '../screens/Setting';
 // import GetStartedScreen from '../screens/OnBoarding/GetStartedScreen';
 // import SelectRoleScreen from '../screens/OnBoarding/SelectRoleScreen';
 // import UserChat from '../screens/Dashboard/UserChat';
@@ -28,7 +29,7 @@ import Favorites from "../screens/Favorites"
 // import ProductDescriptionSeller from '../screens/Dashboard/ProductDescriptionSeller/ProductDescriptionSeller';
 // import Notifications from '../screens/Notifications/Notifications';
 // import * as IMAGECONST from '../theme/ImageConstants';
-import {Scale,verticalScale} from "../common/constants";
+import {ICONS, Scale,verticalScale} from "../common/constants";
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 // import StoreInformastion from '../screens/Dashboard/StoreInformastion';
@@ -51,38 +52,6 @@ const RootBottomTabStack = props => {
         component={HomeScreen}
         options={{gestureEnabled: false, headerShown: false}}
       />
-      {/* <RootStackNavigator.Screen
-        name="StoreInformastion"
-        component={StoreInformastion}
-        options={{gestureEnabled: false, headerShown: false}}
-      />
-
-      <RootStackNavigator.Screen
-        name="QusAnsScreen"
-        component={QusAnsScreen}
-        options={{gestureEnabled: false, headerShown: false}}
-      />
-      <RootStackNavigator.Screen
-        name="TermsCondistion"
-        component={TermsCondistion}
-        options={{gestureEnabled: false, headerShown: false}}
-      />
-      <RootStackNavigator.Screen
-        name="UserChat"
-        component={UserChat}
-        options={{gestureEnabled: false, headerShown: false}}
-      />
-      <RootStackNavigator.Screen
-        name="MyOrder"
-        component={MyOrder}
-        options={{gestureEnabled: false, headerShown: false}}
-      />
-
-      <RootStackNavigator.Screen
-        name="UserProfile"
-        component={UserProfile}
-        options={{gestureEnabled: false, headerShown: false}}
-      /> */}
     </RootStackNavigator.Navigator>
   );
 };
@@ -98,75 +67,6 @@ const FristBottomTabStack = props => {
         options={{gestureEnabled: false, headerShown: false}}
       />
 
-      {/* <RootStackNavigator.Screen
-        name="TopCategories"
-        component={TopCategories}
-        options={{gestureEnabled: false, headerShown: false}}
-      />
-
-      <RootStackNavigator.Screen
-        name="TopSellingCategories"
-        component={TopSellingCategories}
-        options={{gestureEnabled: false, headerShown: false}}
-      />
-
-      <RootStackNavigator.Screen
-        name="AddProduct"
-        component={AddProduct}
-        options={{gestureEnabled: false, headerShown: false}}
-      />
-      <RootStackNavigator.Screen
-        name="ProductDecription"
-        component={ProductDecription}
-        options={{gestureEnabled: false, headerShown: false}}
-      />
-
-      <RootStackNavigator.Screen
-        name="ProductDescriptionSeller"
-        component={ProductDescriptionSeller}
-        options={{gestureEnabled: false, headerShown: false}}
-      /> */}
-
-      {/* <RootStackNavigator.Screen
-		  name="ProductDecription"
-		  component={ProductDecription}
-		  options={{ gestureEnabled: false, headerShown: false }}
-		/>
-		<RootStackNavigator.Screen
-		  name="PaymentScreen"
-		  component={PaymentScreen}
-		  options={{ gestureEnabled: false, headerShown: false }}
-		/>
-		<RootStackNavigator.Screen
-		  name="StoreInformastion"
-		  component={StoreInformastion}
-		  options={{ gestureEnabled: false, headerShown: false }}
-		/>
-		<RootStackNavigator.Screen
-		  name="QusAnsScreen"
-		  component={QusAnsScreen}
-		  options={{ gestureEnabled: false, headerShown: false }}
-		/>
-		<RootStackNavigator.Screen
-		  name="TermsCondistion"
-		  component={TermsCondistion}
-		  options={{ gestureEnabled: false, headerShown: false }}
-		/>
-		<RootStackNavigator.Screen
-		  name="UserChat"
-		  component={UserChat}
-		  options={{ gestureEnabled: false, headerShown: false }}
-		/>
-		<RootStackNavigator.Screen
-		  name="MyOrder"
-		  component={MyOrder}
-		  options={{ gestureEnabled: false, headerShown: false }}
-		/>
-		<RootStackNavigator.Screen
-		  name="AddItem"
-		  component={AddItem}
-		  options={{ gestureEnabled: false, headerShown: false }}
-		/> */}
     </RootStackNavigator.Navigator>
   );
 };
@@ -181,71 +81,6 @@ const SecandBottomTabStack = props => {
         component={Scene}
         options={{gestureEnabled: false, headerShown: false}}
       />
-
-      {/* <RootStackNavigator.Screen
-        name="SessionScreen"
-        component={SessionScreen}
-        options={{gestureEnabled: false, headerShown: false}}
-      />
-
-      <RootStackNavigator.Screen
-        name="EditProduct"
-        component={EditProduct}
-        options={{gestureEnabled: false, headerShown: false}}
-      />
-
-      <RootStackNavigator.Screen
-        name="StoreManagementNew"
-        component={StoreManagementNew}
-        options={{gestureEnabled: false, headerShown: false}}
-      />
-
-      <RootStackNavigator.Screen
-        name="OrderDetails"
-        component={OrderDetails}
-        options={{gestureEnabled: false, headerShown: false}}
-      /> */}
-
-      {/* <RootStackNavigator.Screen
-		  name="QusAnsScreen"
-		  component={QusAnsScreen}
-		  options={{ gestureEnabled: false, headerShown: false }}
-		/>
-		<RootStackNavigator.Screen
-		  name="TermsCondistion"
-		  component={TermsCondistion}
-		  options={{ gestureEnabled: false, headerShown: false }}
-		/>
-		<RootStackNavigator.Screen
-		  name="UserChat"
-		  component={UserChat}
-		  options={{ gestureEnabled: false, headerShown: false }}
-		/>
-		<RootStackNavigator.Screen
-		  name="MyOrder"
-		  component={MyOrder}
-		  options={{ gestureEnabled: false, headerShown: false }}
-		/>
-		<RootStackNavigator.Screen
-		  name="AddItem"
-		  component={AddItem}
-		  options={{ gestureEnabled: false, headerShown: false }}
-		/>
-		<RootStackNavigator.Screen
-		  name="StoreLiveVideo"
-		  component={StoreLiveVideo}
-		  options={{ gestureEnabled: false, headerShown: false }}
-		/>
-		<RootStackNavigator.Screen
-		  name="TopCategories"
-		  component={TopCategories}
-		  options={{ gestureEnabled: false, headerShown: false }}
-		/>
-		<RootStackNavigator.Screen
-		  name="OpenShop"
-		  component={OpenShop}
-		  options={{ gestureEnabled: false, headerShown: false }}
-		/> */}
     </RootStackNavigator.Navigator>
   );
 };
@@ -260,32 +95,19 @@ const ThardBottomTabStack = props => {
         component={Favorites}
         options={{gestureEnabled: false, headerShown: false}}
       />
-      {/* <RootStackNavigator.Screen
-		  name="PaymentScreen"
-		  component={PaymentScreen}
-		  options={{ gestureEnabled: false, headerShown: false }}
-		/>
-  
-		<RootStackNavigator.Screen
-		  name="QusAnsScreen"
-		  component={QusAnsScreen}
-		  options={{ gestureEnabled: false, headerShown: false }}
-		/>
-		<RootStackNavigator.Screen
-		  name="TermsCondistion"
-		  component={TermsCondistion}
-		  options={{ gestureEnabled: false, headerShown: false }}
-		/>
-		<RootStackNavigator.Screen
-		  name="UserChat"
-		  component={UserChat}
-		  options={{ gestureEnabled: false, headerShown: false }}
-		/>
-		<RootStackNavigator.Screen
-		  name="MyOrder"
-		  component={MyOrder}
-		  options={{ gestureEnabled: false, headerShown: false }}
-		/> */}
+    </RootStackNavigator.Navigator>
+  );
+};
+const FourthBottomTabStack = props => {
+  return (
+    <RootStackNavigator.Navigator
+      headerMode="none"
+      initialRouteName="Setting">
+      <RootStackNavigator.Screen
+        name="Setting"
+        component={Setting}
+        options={{gestureEnabled: false, headerShown: false}}
+      />
     </RootStackNavigator.Navigator>
   );
 };
@@ -296,7 +118,7 @@ const BottomTabsStackScreen = props => {
       initialRouteName="HomeScreen"
       tabBarOptions={{
         style: {
-          height: 65,
+          height: verticalScale(30),
           paddingVertical: 5,
           backgroundColor: '#FFFFFF',
           width: Scale(380),
@@ -311,17 +133,6 @@ const BottomTabsStackScreen = props => {
           borderWidth: 1,
           borderStyle: 'solid',
         },
-
-        labelStyle: {
-          fontSize: Scale(12),
-          color: '#85868A',
-          fontWeight: '500',
-        },
-
-        tabBarOptions: {
-          activeTintColor: 'green',
-        },
-
         indicatorStyle: {
           borderBottomColor: 'red',
           borderBottomWidth: 125552,
@@ -331,15 +142,17 @@ const BottomTabsStackScreen = props => {
         name="RootBottomTabStack"
         component={RootBottomTabStack}
         options={{
-          tabBarLabel: 'Home',
+          headerShown: false,
+          tabBarLabel: "",
           tabBarIcon: ({focused}) => (
             <Image
               style={{
+                top:verticalScale(10),
                 width: Scale(24),
                 height: Scale(25),
                 resizeMode: 'contain',
               }}
-              // source={focused ? IMAGECONST.HOME_ACT : IMAGECONST.HOME_IN_ACT}
+              source={focused ? ICONS.Activehome : ICONS.home}
             />
           ),
         }}
@@ -349,15 +162,17 @@ const BottomTabsStackScreen = props => {
         name="FristBottomTabStack"
         component={FristBottomTabStack}
         options={{
-          tabBarLabel: 'Stock',
+          headerShown: false,
+          tabBarLabel: '',
           tabBarIcon: ({focused}) => (
             <Image
               style={{
+                top:verticalScale(10),
                 width: Scale(24),
                 height: Scale(25),
                 resizeMode: 'contain',
               }}
-              // source={focused ? IMAGECONST.ECOM_ACT : IMAGECONST.ECOM_IN_ACT}
+              source={focused ? ICONS.time : ICONS.time}
             />
           ),
         }}
@@ -367,15 +182,17 @@ const BottomTabsStackScreen = props => {
         name="SecandBottomTabStack"
         component={SecandBottomTabStack}
         options={{
-          tabBarLabel: 'Live',
+          headerShown: false,
+          tabBarLabel: '',
           tabBarIcon: ({focused}) => (
             <Image
               style={{
+                top:verticalScale(10),
                 width: Scale(24),
                 height: Scale(25),
                 resizeMode: 'contain',
               }}
-              // source={focused ? IMAGECONST.VIDEO_ACT : IMAGECONST.VIDEO_IN_ACT}
+              source={focused ? ICONS.scene : ICONS.scene}
             />
           ),
         }}
@@ -385,15 +202,36 @@ const BottomTabsStackScreen = props => {
         name="ThardBottomTabStack"
         component={ThardBottomTabStack}
         options={{
-          tabBarLabel: 'Order',
+          headerShown: false,
+          tabBarLabel: '',
           tabBarIcon: ({focused}) => (
             <Image
               style={{
+                top:verticalScale(10),
                 width: Scale(24),
                 height: Scale(25),
                 resizeMode: 'contain',
               }}
-              // source={focused ? IMAGECONST.CART_ACT : IMAGECONST.CART_IN_ACT}
+              source={focused ? ICONS.favorites : ICONS.favorites}
+            />
+          ),
+        }}
+      />
+          <Tab.Screen
+        name="FourthBottomTabStack"
+        component={FourthBottomTabStack}
+        options={{
+          headerShown: false,
+          tabBarLabel: '',
+          tabBarIcon: ({focused}) => (
+            <Image
+              style={{
+                top:verticalScale(10),
+                width: Scale(24),
+                height: Scale(25),
+                resizeMode: 'contain',
+              }}
+              source={focused ? ICONS.setting : ICONS.setting}
             />
           ),
         }}
@@ -405,12 +243,17 @@ const BottomTabsStackScreen = props => {
 const HomeNavigator = () => (
   <DrawerStack.Navigator
     initialRouteName="BottomTabsStackScreen"
+    drawerWidth={Scale(200)}
+    screenOptions={{ drawerPosition: 'right' ,headerShown: false
+  }}
+  
     drawerStyle={{
       flex: 1,
       backgroundColor: '#F6F6F6',
-      width: Scale(337),
+      width: Scale(100),
       borderRadius: Scale(25),
     }}
+    
     drawerContent={props => <CustomDrawer {...props} />}>
     <RootStackNavigator.Screen
       options={{gestureEnabled: false}}

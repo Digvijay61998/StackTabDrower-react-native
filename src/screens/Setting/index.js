@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import {CustomHeader} from "../../common/component"
+const Setting = (props) => {
+const {navigation} = props;
 
-const Setting = () => {
   return (
-    <View>
-      <Text>Setting</Text>
-    </View>
+<CustomHeader navigation={navigation}/>
   )
 }
 

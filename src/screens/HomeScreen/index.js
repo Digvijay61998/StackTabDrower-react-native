@@ -2,9 +2,11 @@ import { StyleSheet, Text, View ,TouchableOpacity} from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 
 import React from 'react'
+import { CustomHeader } from '../../common/component';
+import CustomRooms from './CustomRooms';
 
 const Home = (props) => {
-
+const {navigation} = props;
     const renderHederComponents = () => {
         return (
           <LinearGradient
@@ -32,9 +34,12 @@ const Home = (props) => {
           </LinearGradient>
         );
       };
+      
   return (
     <View>
-      {renderHederComponents()}
+      <CustomHeader navigation={navigation}/>
+      <CustomRooms/>
+      {/* {renderHederComponents()} */}
     </View>
   )
 }

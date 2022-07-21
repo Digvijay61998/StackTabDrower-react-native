@@ -1,10 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import {CustomHeader} from "../../common/component"
 
-const Scene = () => {
+const Scene = (props) => {
+  const {navigation} = props;
   return (
     <View>
-      <Text>Scene</Text>
+      <CustomHeader navigation={navigation}/>
     </View>
   )
 }

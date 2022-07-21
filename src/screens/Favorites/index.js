@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import {CustomHeader} from "../../common/component"
+const Favorites = (props) => {
+const {navigation} = props;
 
-const Favorites = () => {
-  return (
-    <View>
-      <Text>Favorites</Text>
-    </View>
+return (
+<CustomHeader navigation={navigation}/>
   )
 }
 
